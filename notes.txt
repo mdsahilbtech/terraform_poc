@@ -1,0 +1,1 @@
+Verification Verification StepsS3 Backend: Check your initial S3 bucket for the poc-25/terraform.tfstate binary file.AWS Console: Check your EC2 and S3 dashboards for resources prefixed with poc-25.IAM Check: Open your EC2 instance options to confirm the poc-25-ec2-s3-access-role instance profile is attached.
