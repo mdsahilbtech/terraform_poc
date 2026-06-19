@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing Terraform..."
+      - sudo yum install -y yum-utils
+      - sudo yum-config-manager --add-repo https://hashicorp.com
+      - sudo yum -y install terraform
+  pre_build:
+    commands:
+      - echo "Checking Terraform version and initializing..."
+      - terraform version
+      - terraform init
+  build:
+    commands:
+      - echo "Running Terraform Plan and Apply..."
+      - terraform plan -out=tfplan
+      - terraform apply -auto-approve tfplan
